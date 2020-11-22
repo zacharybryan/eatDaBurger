@@ -9,4 +9,13 @@ const burger = {
         });
     },
 
+    create: function(burger){
+        return new Promise(function(resolve, reject){
+            orm.create(burger).then(function(data){
+                resolve(data);
+            });
+        });
+    },
+
+}
 module.exports = burger;

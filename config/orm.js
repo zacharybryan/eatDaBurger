@@ -23,6 +23,19 @@ const orm = {
         });
     },
 
+    update: function(burger) {
+        return new Promise(function(reject, resolve){
+            const query = "UPDATE burgers SET devoured = ? WHERE id = ?;";
+            console.log(id);
+            console.log(eaten);
+            connection.query(query, [devoured, id], function(err, data){
+                if (err)
+                throw err;
+                resolve(data);
+            });
+        });
+    },
+
 
 
 module.exports = orm;

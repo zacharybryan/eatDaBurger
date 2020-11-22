@@ -24,5 +24,13 @@ const burger = {
             });
         });
     },
+    
+    destroy: function(id){
+        return new Promise(function(resolve, reject){
+            orm.destroy(id).then(function(data){
+                resolve(data);
+            });
+        });
+    },
 }
 module.exports = burger;

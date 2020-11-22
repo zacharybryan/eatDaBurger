@@ -11,7 +11,18 @@ const orm = {
             });
         });
     },
-    
+
+    create: function(burger) {
+        return new Promise(function(reject, resolve){
+            const query = "INSERT INTO burgers SET ?;";
+            connection.query(query, function(err, data){
+                if (err)
+                throw err;
+                resolve(data);
+            });
+        });
+    },
+
 
 
 module.exports = orm;

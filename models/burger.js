@@ -17,5 +17,12 @@ const burger = {
         });
     },
 
+    update: function(id, eaten){
+        return new Promise(function(resolve, reject){
+            orm.update(id, eaten).then(function(data){
+                resolve(data);
+            });
+        });
+    },
 }
 module.exports = burger;

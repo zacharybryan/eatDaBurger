@@ -36,6 +36,18 @@ const orm = {
         });
     },
 
+    destroy: function(id) {
+        return new Promise(function(reject, resolve){
+            const query = "DELETE FROM burgers WHERE id = " + id;
+            connection.query(query, function(err, data){
+                if (err)
+                throw err;
+                resolve(data);
+            });
+        });
+    },
+}
+
 
 
 module.exports = orm;

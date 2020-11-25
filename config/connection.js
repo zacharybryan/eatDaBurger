@@ -1,4 +1,5 @@
 const mysql = require("mysql")
+
 const connectionConfig = {
     host: "localhost",
     port: 8889,

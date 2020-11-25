@@ -1,23 +1,25 @@
 const connection = require('./connection');
 
 const orm = {
-    findAll : function() {
+    findAll : function(tableInput, cb) {
         return new Promise(function(resolve, reject) {
-            const query = "SELECT * FROM burgers;";
-            connection.query(query, function(err, data){
-                if (err)
+            const query = "SELECT * FROM " + tableInput +";";
+            connection.query(query, function(err, result) {
+                if (err) {
                 throw err;
-                resolve(data);
-            });
+            }
+                cb(result);
         });
-    },
+        )},
+}
 
     create: function(burger) {
         return new Promise(function(reject, resolve){
             const query = "INSERT INTO burgers SET ?;";
+            console.log(query);
             connection.query(query, function(err, data){
                 if (err)
-                throw err;
+                console.log(err);
                 resolve(data);
             });
         });

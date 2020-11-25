@@ -12,7 +12,7 @@ const burger = {
     create: function(burger){
         return new Promise(function(resolve, reject){
             orm.create(burger).then(function(data){
-                resolve(data);
+                console.log(data);
             });
         });
     },

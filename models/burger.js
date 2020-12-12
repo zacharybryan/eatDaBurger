@@ -13,8 +13,11 @@ const burger = {
     create: function(burger){
         return new Promise(function(resolve, reject){
             orm.create(burger).then(function(data){
-                console.log(data);
-            });
+                resolve(data);    
+            }).catch
+            (function (err) {
+                reject(err)
+            })
         });
     },
 

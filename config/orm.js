@@ -15,14 +15,15 @@ const orm = {
 
     },
 
-    create: function(burger) {
-        return new Promise(function(reject, resolve){
+    create: function (burger) {
+        return new Promise(function (reject, resolve) {
             const query = "INSERT INTO burgers (name) VALUES (?)";
             console.log(query);
-            connection.query(query, function(err, data) {
-                if (err)
-                console.log(err);
-                resolve(data);
+            connection.query(query, [burger], function (err, data) {
+                if (err) {
+                    console.log(err)
+                }
+                    resolve("string"); 
             });
         });
     },

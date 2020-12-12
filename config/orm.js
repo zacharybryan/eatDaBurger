@@ -7,11 +7,13 @@ const orm = {
             connection.query(query, function(err, result) {
                 if (err) {
                 throw err;
-            }
+                }
+                
                 cb(result);
-        });
-        )},
-}
+            });
+        })
+
+    },
 
     create: function(burger) {
         return new Promise(function(reject, resolve){

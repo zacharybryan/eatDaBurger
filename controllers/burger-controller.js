@@ -4,10 +4,6 @@ const burger = require("../models/burger.js");
 const router = express.Router();
 
 router.get("/", function(req, res) {
-        res.redirect("/");
-    });
-
-router.get("/", function(req, res) {
     burger.findAll(function(burgerData) {
         res.render("index", { burger_data: burgerData});
     });

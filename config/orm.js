@@ -1,15 +1,15 @@
 const connection = require('./connection');
 
 const orm = {
-    findAll : function(tableInput, cb) {
+    findAll : function(burger) {
         return new Promise(function(resolve, reject) {
-            const query = "SELECT * FROM " + tableInput +";";
-            connection.query(query, function(err, result) {
+            const query = "SELECT * FROM burgers" + ";";
+            connection.query(query, function(err, data) {
                 if (err) {
                 throw err;
                 }
-                
-                cb(result);
+
+            resolve(data);
             });
         })
 

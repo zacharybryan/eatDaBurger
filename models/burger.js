@@ -4,6 +4,7 @@ const burger = {
     findAll: function(){
         return new Promise(function(resolve, reject) {
             orm.findAll().then(function(data){
+                console.log("burgers js")
                 resolve(data);
             });
         });
